@@ -28,17 +28,22 @@
 }
 
 body {
-  margin-left: 2px;
-  margin-right: 2px;
-  background-color: #00564F;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #659654;
   color: #eee;
 }
 
 .navbar-inverse {
   border-radius: 1px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .well {
-  color:#002623
+  color: #eee;
+  background-color: #555;
 }
 
 .btn {
@@ -49,3 +54,14 @@ body {
   color: #222;
 }
 
+a.login-links,
+a.login-links:active,
+a.login-links:visited {
+  color: #eee;
+  text-decoration: none;
+}
+
+a.login-links:hover {
+  color: #eee;
+  text-decoration: underline;
+}
