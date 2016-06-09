@@ -61,6 +61,14 @@ class MoviesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+
+  end
+  
+  def results
+    @results = Movie.search(params[:search])
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,5 +79,9 @@ class MoviesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
       params.require(:movie).permit(:title, :description, :year, :director, :user_id)
+    end
+    
+    def search_params
+      params.require(:search)
     end
 end

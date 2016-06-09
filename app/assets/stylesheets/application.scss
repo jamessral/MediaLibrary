@@ -15,7 +15,7 @@
 @import "bootstrap";
 
 .center {
-  text-align:center;
+  text-align: center;
 }
 
 .movie-header {
@@ -64,4 +64,23 @@ a.login-links:visited {
 a.login-links:hover {
   color: #eee;
   text-decoration: underline;
+}
+
+.searchbar {
+  color: #222;
+}
+
+a.searchresults,
+a.searchresults:active,
+a.searchresults:visited {
+  text-align: center;
+  color: #eee;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+a.searchresults:hover {
+  color: #eee;
+  text-decoration: underline;
+  font-size: 22px;
 }

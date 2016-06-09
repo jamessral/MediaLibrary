@@ -7,9 +7,9 @@ class Movie < ActiveRecord::Base
 
   @base_uri = 'http://api.themoviedb.org/3/search/movie'
   @headers = {:accept => 'application/json'}
-  @key = ENV['SECRET_API_KEY']
+  @key = ENV["SECRET_API_KEY"]
 
-  def search(title, year = '')
+  def self.search(title)
     title_words = CGI::escape(title)
     response = RestClient.get "#{@base_uri}?api_key=#{@key}&query=#{title_words}", @headers
 
@@ -17,15 +17,16 @@ class Movie < ActiveRecord::Base
       @data = JSON.parse(response)
       results = @data["results"]
 
-      movies = []
+      movie_results = []
       results.each do |result|
         movie = {}
         movie["id"]             = result["id"]
         movie["original_title"] = result["original_title"]
         movie["release_date"]   = result["release_date"]
-        movie["poster path"]    = result["poster path"]
-        movies.push(movie)
+        movie["poster_path"]    = result["poster_path"]
+        movie_results.push(movie)
       end
+      return movie_results
     end
   end
 end
