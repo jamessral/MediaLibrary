@@ -1,5 +1,26 @@
-<% form_for @movie, url: {action: "create"},
-                    html: {class: "movie-form"} do |f| %>
-
-
-<% end %>
+<div class="container col-md-10 col-md-offset-1">
+  <%= form_for @movie, url: {action: "create"},
+                      html: {class: "movie-form"} do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :director %>
+      <%= f.text_field :director, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :year %>
+      <%= f.number_field :year, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :format %>
+      <%= f.text_field :format, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <div class="col-md-1 col-md-offset-5">
+        <%= f.submit 'Add Movie', class: 'btn btn-default' %>
+      </div>
+    </div>
+  <% end %>
+</div>
